@@ -39,11 +39,19 @@ function main() {
     const btn = document.getElementById('btn');
     const output = document.getElementById('output');
 
+    const copyBtn = document.getElementById('copy_btn');
+
     btn.addEventListener('click', function () {
         const bgColor = hex()
         root.style.backgroundColor = bgColor;
-        output.value = bgColor
+        output.value = bgColor;
+
     })
+
+    copyBtn.addEventListener('click', function () {
+         
+        navigator.clipboard.writeText(output.value)
+     })
     
 }
 
